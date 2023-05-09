@@ -31,7 +31,6 @@ router.post(
           { ÉTAT: condition },
           { COULEUR: color },
           { EMPLACEMENT: city },
-          ,
         ],
         product_image: resultPicture,
         owner: req.user,
