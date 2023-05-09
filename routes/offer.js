@@ -35,7 +35,6 @@ router.post(
         owner: req.user,
       });
       await newOffer.save();
-      //test
       res.status(201).json(newOffer);
     } catch (error) {
       return res.status(500).json({ error: error.message });
