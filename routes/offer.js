@@ -50,11 +50,6 @@ router.get("/offers", async (req, res) => {
   try {
     const { title, priceMin, priceMax, sort, page } = req.query;
 
-    // {
-    //   product_name: new RegExp(title, "i"),
-    //   product_price: { $gte: priceMin, $lte: priceMax },
-    // }
-
     const filter = {};
 
     if (title) {
