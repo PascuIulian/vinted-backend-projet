@@ -10,18 +10,19 @@ const stripe = require("stripe")(
 const app = express();
 app.use(cors());
 app.use(express.json());
+const isAuthenticated = require("../middlewares/isAuthenticated");
 
-router.post("/payment", async (req, res) => {
+router.post("/payment", isAuthenticated, async (req, res) => {
   try {
     const stripeToken = req.body.stripeToken;
-    const response = await stripe.charges.create({
+    const responseFromStripe = await stripe.charges.create({
       amount: 2000,
       currency: "eur",
-      description: "description de l'obj",
+      description: "La description de l'objet acheté",
       source: stripeToken,
     });
-    console.log(response);
-    res.json("ok");
+    console.log(responseFromStripe);
+    res.json(responseFromStripe.status);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
