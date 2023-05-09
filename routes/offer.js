@@ -20,7 +20,7 @@ router.post(
       const resultPicture = await cloudinary.uploader.upload(
         convertToBase64(picture)
       );
-
+      //test
       const newOffer = new Offer({
         product_name: title,
         product_description: description,
