@@ -75,7 +75,7 @@ router.get("/offers", async (req, res) => {
       sortFilter.product_price = 1;
     }
 
-    const limit = 3;
+    const limit = 20;
 
     let pageRequired = 1;
     if (page) {
