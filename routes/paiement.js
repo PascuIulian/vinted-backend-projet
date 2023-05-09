@@ -13,7 +13,7 @@ app.use(express.json());
 
 router.post("/payment", async (req, res) => {
   try {
-    const { stripeToken } = req.fields;
+    const stripeToken = req.body.stripeToken;
     const response = await stripe.charges.create({
       amount: 2000,
       currency: "eur",
