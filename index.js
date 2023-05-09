@@ -22,6 +22,9 @@ app.use(userRoutes);
 const offerRoutes = require("./routes/offer");
 app.use(offerRoutes);
 
+const paiementRoutes = require("./routes/paiement");
+app.use(paiementRoutes);
+
 app.get("/", (req, res) => {
   res.json({ message: "Wellcome on my server :)" });
 });
